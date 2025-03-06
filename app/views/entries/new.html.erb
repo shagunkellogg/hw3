@@ -1,0 +1,23 @@
+<h1>New Trip to <%= @place.name %></h1>
+
+<form action="/places/<%= @place.id %>/entries" method="post">
+  <ul>
+    <li>
+      <label>Trip Title:</label>
+      <input type="text" name="title">
+    </li>
+    <li>
+      <label>Trip Description:</label>
+      <input type="text" name="description">
+    </li>
+    <li>
+      <label>Date of Visit:</label>
+      <input type="date" name="occurred_on">
+    </li>
+    <li>
+      <input type="submit" value="Save Trip">
+    </li>
+  </ul>
+</form>
+
+<a href="/places/<%= @place.id %>">Back to <%= @place.name %></a>

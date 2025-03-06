@@ -1,0 +1,20 @@
+<h1><%= @place.name %></h1>
+
+<a href="/places">Back to Places</a>
+
+<h2>Trips and Memories</h2>
+
+<% if @entries.any? %>
+  <ul>
+    <% @entries.each do |entry| %>
+      <li>
+        <strong><%= entry.title %></strong> - <%= entry.description %>
+        (Visited on <%= entry.occurred_on %>)
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No trips logged for this place yet!!</p>
+<% end %>
+
+<a href="/places/<%= @place.id %>/entries/new">Log a New Trip to <%= @place.name %></a>
